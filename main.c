@@ -8,7 +8,8 @@
 
 void main()
 {
-    char f;
+
+    int p=0;
 	do{
   	int choice;
   	printf("WHAT DO U WANNA DO?\n");
@@ -24,6 +25,7 @@ void main()
 
     switch (choice) {
       case 1: admin_main();
+
               break;
       case 2: details_main();
               break;
@@ -31,7 +33,11 @@ void main()
       default:printf("ERROR 404!");
     }
     system("CLS");
-    printf("\nWANNA GO BACK TO MENU? ENTER S OR s");
-    scanf("%c",&f);
-  }while(f == 'S' || f == 's');
+    printf("\nWANNA GO BACK TO MAIN-MENU? ENTER S OR s\n");
+    scanf("%c",&p);
+    if(p == 'S' || p == 's')
+    {
+      p = 0;
+    }
+  }while(p);
 }

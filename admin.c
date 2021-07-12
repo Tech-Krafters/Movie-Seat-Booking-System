@@ -28,11 +28,11 @@ void add_movie()
     }
     else
     {
-        printf("Enter the movie name : ");
+        printf("\nEnter the movie name : ");
         scanf("%s",&mov_name);
-        printf("Set the show timing : ");
+        printf("\nSet the show timing : ");
         scanf("%s",&time);
-        printf("Set the price of ticket");
+        printf("\nSet the price of ticket");
         scanf("%d",&price);
         fprintf(fp,"%s,%s,%d\n",mov_name,time,price);
 
@@ -112,28 +112,37 @@ void print_movie()
 int admin_main()
 {
     int ch;
+    int r=0;
+do{
     printf("\n==================================================================\n");
-  	printf("||             1- Add Movie                               ||\n");
+  	printf("||             1- Add Movie                                       ||\n");
   	// printf("||             2- To add movie (only admin)                       ||\n");
-  	printf("||             2- Read Movie                              ||\n");
+  	printf("||             2- Read Movie                                      ||\n");
   	// printf("||             4- To cancel the seat                              ||\n");
-  	printf("||             3- Update Movie                                     ||\n");
-  	printf("%.15s","\n4- Print Movie\n");
+  	printf("||             3- Update Movie                                    ||\n");
+  	printf("||             4- display Movie                                   ||\n");
   	printf("||================================================================||\n");
-    scanf("%d",ch);
+    scanf("%d",&ch);
 	switch(ch)
     {
     	case 1:	add_movie();
-    			break;
+    			    break;
     	case 2:	read_movie();
-    			break;
+    			    break;
     	case 3:	update_movie();
-    			break;
-		case 4:	print_movie();
-    			break;		
+    			    break;
+		case 4:	read_movie();
+            print_movie();
+    			  break;
     	default: printf("Bye");
 	}
-	
+  printf("\nWANNA GO BACK TO ADMIN-MENU? ENTER S OR s\n");
+  scanf("%c",&r);
+  if(r == 'S' || r == 's')
+  {
+    r = 0;
+  }
+}while(r);
 //    add_movie();
 //    read_movie();
 //    print_movie();
